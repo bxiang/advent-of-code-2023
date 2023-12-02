@@ -2,6 +2,8 @@
 .history/
 .metals/
 .vscode/
+.bsp/
+.idea/
 target/
 *.class
 *.log
