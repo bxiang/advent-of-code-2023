@@ -5,13 +5,13 @@ import scala.io.Source
 @main
 def main() =
   val part1 = Source
-    .fromResource("input_day1.txt")
+    .fromResource("input1.txt")
     .getLines
     .map(findNumbersPart1)
     .reduce(_ + _)
   println(s"Part1: $part1")
   val part2 = Source
-    .fromResource("input_day1.txt")
+    .fromResource("input1.txt")
     .getLines
     .map(findNumbersPart2)
     .reduce(_ + _)

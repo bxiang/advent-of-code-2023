@@ -5,14 +5,14 @@ import scala.io.Source
 @main
 def main() =
   val part1 = Source
-    .fromResource("input_day2.txt")
+    .fromResource("input2.txt")
     .getLines
     .map(parseLine)
     .filter(isPossible)
     .foldLeft(0)((c, g) => c + g.id)
   println(s"Part1: $part1")
   val part2 = Source
-    .fromResource("input_day2.txt")
+    .fromResource("input2.txt")
     .getLines
     .map(parseLine)
     .map(toPower)
