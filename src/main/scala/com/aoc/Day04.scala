@@ -21,28 +21,14 @@ def day04() =
   println(s"Part2: $part2")
 
 def parseLinePart1(s: String): Int =
-  val x = s.split(": ").last
-  val ws =
-    x.takeWhile(_ != '|').split(" ").toList.map(_.trim).filter(_.nonEmpty)
-  val ns = x
-    .dropWhile(_ != '|')
-    .drop(1)
-    .split(" ")
-    .toList
-    .map(_.trim)
-    .filter(_.nonEmpty)
-  ws.intersect(ns).foldLeft(0)((a, b) => if (a == 0) 1 else a * 2)
+  val x = s.split(": ").last.split("""\| """)
+  val ws = x.head.split(" ").toList.map(_.trim).filter(_.nonEmpty)
+  val ns = x.last.split(" ").toList.map(_.trim).filter(_.nonEmpty)
+  ws.intersect(ns).foldLeft(0)((a, _) => if (a == 0) 1 else a * 2)
 
 def parseLinePart2(s: String): Int =
-  val x = s.split(": ").last
-  val ws =
-    x.takeWhile(_ != '|').split(" ").toList.map(_.trim).filter(_.nonEmpty)
-  val ns = x
-    .dropWhile(_ != '|')
-    .drop(1)
-    .split(" ")
-    .toList
-    .map(_.trim)
-    .filter(_.nonEmpty)
+  val x = s.split(": ").last.split("""\| """)
+  val ws = x.head.split(" ").toList.map(_.trim).filter(_.nonEmpty)
+  val ns = x.last.split(" ").toList.map(_.trim).filter(_.nonEmpty)
   ws.intersect(ns).length
 
