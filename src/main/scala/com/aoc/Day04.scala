@@ -1,6 +1,7 @@
 package com.aoc
 
 import scala.io.Source
+import scala.math.pow
 
 @main
 def day04() =
@@ -24,7 +25,7 @@ def parseLinePart1(s: String): Int =
   val x = s.split(": ").last.split("""\| """)
   val ws = x.head.split(" ").toList.map(_.trim).filter(_.nonEmpty)
   val ns = x.last.split(" ").toList.map(_.trim).filter(_.nonEmpty)
-  ws.intersect(ns).foldLeft(0)((a, _) => if (a == 0) 1 else a * 2)
+  pow(2, ws.intersect(ns).length - 1).toInt
 
 def parseLinePart2(s: String): Int =
   val x = s.split(": ").last.split("""\| """)
