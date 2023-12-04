@@ -3,7 +3,7 @@ package com.aoc
 import scala.io.Source
 
 @main
-def main() =
+def day3() =
   val (numbers, symbols) = Source
     .fromResource("input3.txt")
     .getLines
